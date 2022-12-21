@@ -1,4 +1,10 @@
-.error {
+.find{
+    width: 20rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+/* .error {
     border: 1px solid red;
 }
 
@@ -12564,4 +12570,4 @@ footer.sticky-footer .copyright {
 
 body.sidebar-toggled footer.sticky-footer {
     width: 100%;
-}
+} */

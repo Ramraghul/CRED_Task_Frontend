@@ -6,7 +6,6 @@ import Home from './Components/Home/Home';
 import Navbar from './Components/Home/Navbar';
 import Allstudent from './Components/Students/Allstudent';
 import Createstudent from './Components/Students/Createstudent';
-import Viewstudent from './Components/Students/Viewstudent';
 import Editstudent from './Components/Students/Editstudent';
 
 
@@ -18,7 +17,6 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route index element={<Allstudent/>}/>
       <Route path='/CreateStudent' element={<Createstudent/>}/>
-      <Route path='/Viewstudent/:id' element={<Viewstudent/>}/>
       <Route path='/Editstudent/:id' element={<Editstudent/>}/>
     </Routes>
     </BrowserRouter>
