@@ -24,7 +24,7 @@ function Editstudent() {
         },
         onSubmit: async (data) => {
             try {
-                await axios.put(`${API.Link}/${params.id}`, data)
+                await axios.put(`${API.Link}/UpdateStudent/${params.id}`, data)
                 Toast.fire({ icon: 'success', title: 'Edit is done' })
                 navigate('/')
             } catch (error) {
@@ -40,7 +40,7 @@ function Editstudent() {
 
     let ComeData = async () => {
         try {
-            let set = await axios.get(`${API.Link}/${params.id}`)
+            let set = await axios.get(`${API.Link}/ViewStudent/${params.id}`)
             formik.setValues({
                 Firstname: set.data.Firstname,
                 Lastname: set.data.Lastname,
@@ -101,7 +101,7 @@ function Editstudent() {
                     <div className="col-md-6 mb-4">
                         <div className="form-group">
                             <label htmlFor="phone">DOB</label>
-                            <input type="date" className="form-control" id="phone" value={formik.values.DOB} onChange={formik.handleChange} name="DOB" required />
+                            <input type="datetime" className="form-control" id="phone" value={formik.values.DOB} onChange={formik.handleChange} name="DOB" required />
                         </div>
                     </div>
 

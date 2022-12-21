@@ -36,7 +36,7 @@ function Allstudent() {
 
     // Component navigation
     var Editstudent = (data) => {
-        navigate(`/Editstudent/${data.id}`)
+        navigate(`/Editstudent/${data._id}`)
     }
 
     //Store Data
@@ -51,7 +51,7 @@ function Allstudent() {
     let dataLoad = async () => {
         try {
             setloading(true)
-            let date = await axios.get(`${API.Link}`)
+            let date = await axios.get(`${API.Link}/AllStudent`)
             setAllData(date.data);
             setFilteredData(date.data)
             setloading(false)
@@ -76,7 +76,7 @@ function Allstudent() {
                 buttons: ["No", true],
             });
             if (sure === true) {
-                await axios.delete(`${API.Link}/${id}`)
+                await axios.delete(`${API.Link}/DeleteStudent/${id}`)
                 Toast.fire({ icon: 'success', title: 'Student Data deleted' })
                 dataLoad()
             }
@@ -133,7 +133,7 @@ function Allstudent() {
                                                                 </td>
                                                                 <td>
                                                                     <div className="btn-group me-2" role="group" aria-label="Second group">
-                                                                        <button onClick={() => { dataDelete(value.id) }} type="button" className="btn btn-danger m-1">Delete</button>
+                                                                        <button onClick={() => { dataDelete(value._id) }} type="button" className="btn btn-danger m-1">Delete</button>
                                                                     </div>
                                                                 </td>
                                                             </tr>
